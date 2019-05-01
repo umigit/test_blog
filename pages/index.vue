@@ -1,65 +1,69 @@
 <template>
   <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        test_blog
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
+    <div class="input-box">
+      <input v-model="message" class="text-box" type="text"/>
+      <input class="submit-button" type="submit" @click="sendMessage"/>
+    </div>
+    <div class="message-box">
+      {{message}}
     </div>
   </section>
 </template>
 
 <script>
 import AppLogo from '~/components/AppLogo.vue'
+import firebase from 'firebase/app';
 
 export default {
   components: {
-    AppLogo
+
+  },
+  data(){
+    return {
+      message: ""
+    }
+  },
+  methods: {
+    sendMessage() {
+      return {
+        message: ""
+      }
+    }
   }
 }
+
 </script>
 
 <style>
 .container {
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.input-box {
+  display: inline-block;
+  margin: 50px auto 0;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
+.text-box {
+  width: 300px;
+  height: 40px;
+  border: 1px solid gray;
+  padding: 10px 10px;
 }
 
-.links {
-  padding-top: 15px;
+.submit-button {
+  background-color: #22aaaa;
+  width: 60px;
+  height: 40px;
+  border: 1px solid #22aaaa;
+}
+
+.message-box {
+  width: 600px;
+  border: 1px solid gray;
+  margin: 10px auto;
+  padding: 20px 40px;
 }
 </style>
 

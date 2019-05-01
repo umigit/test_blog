@@ -9,7 +9,7 @@ export default {
 
 }
 
-var firebase = require("firebase");
+var firebase = require("firebase/app");
 
 var config = {
     apiKey: "AIzaSyDJ5SRYLdQ4f_LrMepaYD5Okr7f37YIz40",
@@ -19,7 +19,10 @@ var config = {
     storageBucket: "test-blog-6f23b.appspot.com",
     messagingSenderId: "1009099037896"
   };
-firebase.initializeApp(config);
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(config);
+}
 </script>
 
 <style>
