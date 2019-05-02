@@ -4,27 +4,6 @@
   </div>
 </template>
 
-<script>
-export default {
-
-}
-
-var firebase = require("firebase/app");
-
-var config = {
-    apiKey: "AIzaSyDJ5SRYLdQ4f_LrMepaYD5Okr7f37YIz40",
-    authDomain: "test-blog-6f23b.firebaseapp.com",
-    databaseURL: "https://test-blog-6f23b.firebaseio.com",
-    projectId: "test-blog-6f23b",
-    storageBucket: "test-blog-6f23b.appspot.com",
-    messagingSenderId: "1009099037896"
-  };
-
-if (!firebase.apps.length) {
-  firebase.initializeApp(config);
-}
-</script>
-
 <style>
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
